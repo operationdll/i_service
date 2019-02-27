@@ -223,10 +223,11 @@ class StaffModel extends \BaseModel
         if (empty($userId)) {
             $this->throwException('员工未配置，请联系管理员添加', 5);
         } else {
-            $hotelList = explode(",", $getStaffInfo['hotel_list']);
-            if (!empty($param['hotelid']) && !in_array($param['hotelid'], $hotelList)) {
-                $this->throwException('员工无对应物业权限，请选择有权限的物业', 5);
-            }
+            //先暂时屏蔽员工物业权限判断
+            // $hotelList = explode(",", $getStaffInfo['hotel_list']);
+            // if (!empty($param['hotelid']) && !in_array($param['hotelid'], $hotelList)) {
+            //     $this->throwException('员工无对应物业权限，请选择有权限的物业', 5);
+            // }
         }
 
         $newStaffInfo = array(
